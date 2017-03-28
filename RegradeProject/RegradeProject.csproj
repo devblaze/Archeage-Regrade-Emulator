@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0094850-A50E-4037-8FE8-A276CA37CC75}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RegradeProject</RootNamespace>
+    <AssemblyName>RegradeProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnchantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnchantForm.Designer.cs">
+      <DependentUpon>EnchantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegradeOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegradeOptions.Designer.cs">
+      <DependentUpon>RegradeOptions.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EnchantForm.resx">
+      <DependentUpon>EnchantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegradeOptions.resx">
+      <DependentUpon>RegradeOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\armor_normal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\armor_resp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\button_click.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\charm_blue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\charm_green.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\charm_red.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\charm_s_red.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\charm_s_yellow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\charm_yellow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\grade12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jewel_normal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\jewel_resp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\weapon_normal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\weapon_resp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\charm_silver_white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\1H Weapon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\2H Weapon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Bow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Shield.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\background_enchant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\copper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\background_enchant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\copper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\loginForm.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
