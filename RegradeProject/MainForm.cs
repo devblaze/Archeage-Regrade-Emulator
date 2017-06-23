@@ -22,6 +22,8 @@ namespace RegradeProject
         double charmChance = 0;
         double gradeChance = 40;
         bool useHack = false;
+        int numTries = 0;
+        int aaversion = 0;
 
         public MainForm()
         {
@@ -75,13 +77,15 @@ namespace RegradeProject
                 useResp = false;
                 useScroll = true;
             }
+            Debug.WriteLine(useCharm);
+            updateChance();
         }
 
         private void pbRWscroll_Click(object sender, EventArgs e)
         {
-            if (grade == 10)
+            if (grade == 13)
             {
-                MessageBox.Show("You can't go above mythic ... yet", "Enchant Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You can't go above Eternal ... yet", "Enchant Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             } else {
                 String itemT = RegradeOptions.itemType;
                 if (itemT == "1H Weapon")
@@ -108,6 +112,7 @@ namespace RegradeProject
                     useResp = true;
                     useScroll = false;
                 }
+                updateChance();
             }
         }
 
@@ -163,13 +168,14 @@ namespace RegradeProject
                 useResp = false;
                 useScroll = true;
             }
+            updateChance();
         }
 
         private void pbRAscroll_Click(object sender, EventArgs e)
         {
-            if (grade == 10)
+            if (grade == 13)
             {
-                MessageBox.Show("You can't go above mythic ... yet", "Enchant Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You can't go above Eternal ... yet", "Enchant Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -216,6 +222,7 @@ namespace RegradeProject
                     useResp = true;
                     useScroll = false;
                 }
+                updateChance();
             }
         }
 
@@ -243,13 +250,14 @@ namespace RegradeProject
                 useResp = false;
                 useScroll = true;
             }
+            updateChance();
         }
 
         private void pbRJscroll_Click(object sender, EventArgs e)
         {
-            if (grade == 10)
+            if (grade == 13)
             {
-                MessageBox.Show("You can't go above mythic ... yet", "Enchant Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("You can't go above Eternal ... yet", "Enchant Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -272,6 +280,7 @@ namespace RegradeProject
                     useResp = true;
                     useScroll = false;
                 }
+                updateChance();
             }
         }
 
@@ -279,8 +288,10 @@ namespace RegradeProject
         {
             if (grade == 4)
             {
+                useCharm = true;
                 pbCharm.Image = Properties.Resources.charm_green;
                 charmChance = 1.75;
+                updateChance();
             }
         }
 
@@ -288,8 +299,10 @@ namespace RegradeProject
         {
             if (grade == 5)
             {
+                useCharm = true;
                 pbCharm.Image = Properties.Resources.charm_blue;
                 charmChance = 1.75;
+                updateChance();
             }
         }
 
@@ -297,23 +310,29 @@ namespace RegradeProject
         {
             if (grade <= 6)
             {
+                useCharm = true;
                 pbCharm.Image = Properties.Resources.charm_yellow;
                 charmChance = 1.5;
+                updateChance();
             }
         }
 
         private void pbSYellow_Click(object sender, EventArgs e)
         {
+            useCharm = true;
             pbCharm.Image = Properties.Resources.charm_s_yellow;
             charmChance = 1.5;
+            updateChance();
         }
 
         private void pbRed_Click(object sender, EventArgs e)
         {
             if (grade <= 6)
             {
+                useCharm = true;
                 pbCharm.Image = Properties.Resources.charm_red;
                 charmChance = 2;
+                updateChance();
             }
         }
 
@@ -321,77 +340,251 @@ namespace RegradeProject
         {
             pbCharm.Image = Properties.Resources.charm_s_red;
             charmChance = 2;
+            updateChance();
         }
 
         private void pbWhite_Click(object sender, EventArgs e)
         {
             if (grade >= 7)
             {
+                useCharm = true;
                 pbCharm.Image = Properties.Resources.charm_silver_white;
                 charmChance = 2.5;
+                updateChance();
             }
         }
 
-        void changeChange(double gra)
+        void updateChance()
         {
-            if (gra == 0)
+            Debug.WriteLine(useCharm);
+            if (useCharm == true)
             {
-                //Grade: Basic
-                gradeChance = 70;
+                lbPerchance.Text = Convert.ToString(gradeChance * gradeChance) + "%";
             }
-            else if (gra == 1)
+            lbPerchance.Text = Convert.ToString(gradeChance) + "%";
+        }
+
+        void changeChange(int gra,int aaver,String mode)
+        {
+            if (aaversion == 1)
             {
-                //Grade: Grand
-                gradeChance = 40;
-            }
-            else if (gra == 2)
+                if (gra == 0)
+                {
+                    //Grade: Basic
+                    gradeChance = 90;
+                }
+                else if (gra == 1)
+                {
+                    //Grade: Grand
+                    gradeChance = 50;
+                }
+                else if (gra == 2)
+                {
+                    //Grade: Rare
+                    gradeChance = 35;
+                }
+                else if (gra == 3)
+                {
+                    //Grade: Arcane
+                    gradeChance = 30;
+                }
+                else if (gra == 4)
+                {
+                    //Grade: Heroic
+                    //Old: scroll = 30;
+                    gradeChance = 25;
+                }
+                else if (gra == 5)
+                {
+                    //Grade: Unique
+                    //Old: scroll = 25;
+                    gradeChance = 20;
+                }
+                else if (gra == 6)
+                {
+                    //Grade: Celestial
+                    gradeChance = 10;
+                }
+                else if (gra == 7)
+                {
+                    //Grade: Divine
+                    gradeChance = 7.5;
+                }
+                else if (gra == 8)
+                {
+                    //Grade: Epic"
+                    gradeChance = 5;
+                }
+                else if (gra == 9)
+                {
+                    //Grade: Legendary
+                    gradeChance = 2.5;
+                }
+            } else if (aaversion == 2)
             {
-                //Grade: Rare
-                gradeChance = 30;
-            }
-            else if (gra == 3)
-            {
-                //Grade: Arcane
-                gradeChance = 30;
-            }
-            else if (gra == 4)
-            {
-                //Grade: Heroic
-                //Old: scroll = 30;
-                gradeChance = 25;
-            }
-            else if (gra == 5)
-            {
-                //Grade: Unique
-                //Old: scroll = 25;
-                gradeChance = 20;
-            }
-            else if (gra == 6)
-            {
-                //Grade: Celestial
-                gradeChance = 10;
-            }
-            else if (gra == 7)
-            {
-                //Grade: Divine
-                gradeChance = 7.5;
-            }
-            else if (gra == 8)
-            {
-                //Grade: Epic"
-                gradeChance = 5;
-            }
-            else if (gra == 9)
-            {
-                //Grade: Legendary
-                gradeChance = 2.5;
+                if (mode == "Easy")
+                {
+                    switch (gra)
+                    {
+                        case 1:
+                            //Basic
+                            gradeChance = 100;
+                            break;
+                        case 2:
+                            //Grand
+                            gradeChance = 100;
+                            break;
+                        case 3:
+                            //Rare
+                            gradeChance = 100;
+                            break;
+                        case 4:
+                            //Arcane
+                            gradeChance = 67.5;
+                            break;
+                        case 5:
+                            //Heroic
+                            gradeChance = 67.5;
+                            break;
+                        case 6:
+                            //Unique
+                            gradeChance = 47.3;
+                            break;
+                        case 7:
+                            //Celestial
+                            gradeChance = 40.5;
+                            break;
+                        case 8:
+                            //Divine
+                            gradeChance = 13.5;
+                            break;
+                        case 9:
+                            //Epic
+                            gradeChance = 10.8;
+                            break;
+                        case 10:
+                            // Legendary
+                            gradeChance = 4.1;
+                            break;
+                        case 11:
+                            //Mythic
+                            gradeChance = 2.7;
+                            break;
+                    }
+                }
+                else if (mode == "Normal")
+                {
+                    switch (gra)
+                    {
+                        case 1:
+                            //Basic
+                            gradeChance = 100;
+                            break;
+                        case 2:
+                            //Grand
+                            gradeChance = 100;
+                            break;
+                        case 3:
+                            //Rare
+                            gradeChance = 100;
+                            break;
+                        case 4:
+                            //Arcane
+                            gradeChance = 50;
+                            break;
+                        case 5:
+                            //Heroic
+                            gradeChance = 50;
+                            break;
+                        case 6:
+                            //Unique
+                            gradeChance = 35;
+                            break;
+                        case 7:
+                            //Celestial
+                            gradeChance = 30;
+                            break;
+                        case 8:
+                            //Divine
+                            gradeChance = 10;
+                            break;
+                        case 9:
+                            //Epic
+                            gradeChance = 8;
+                            break;
+                        case 10:
+                            // Legendary
+                            gradeChance = 3;
+                            break;
+                        case 11:
+                            //Mythic
+                            gradeChance = 2;
+                            break;
+                    }
+                }
+                else if (mode == "Hard")
+                {
+                    switch (gra)
+                    {
+                        case 1:
+                            //Basic
+                            gradeChance = 100;
+                            break;
+                        case 2:
+                            //Grand
+                            gradeChance = 100;
+                            break;
+                        case 3:
+                            //Rare
+                            gradeChance = 100;
+                            break;
+                        case 4:
+                            //Arcane
+                            gradeChance = 32.5;
+                            break;
+                        case 5:
+                            //Heroic
+                            gradeChance = 32.5;
+                            break;
+                        case 6:
+                            //Unique
+                            gradeChance = 22.8;
+                            break;
+                        case 7:
+                            //Celestial
+                            gradeChance = 19.5;
+                            break;
+                        case 8:
+                            //Divine
+                            gradeChance = 6.5;
+                            break;
+                        case 9:
+                            //Epic
+                            gradeChance = 5.2;
+                            break;
+                        case 10:
+                            // Legendary
+                            gradeChance = 2;
+                            break;
+                        case 11:
+                            //Mythic
+                            gradeChance = 1.3;
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong with your Option -> Regrade Options -> Item Type. Chose the correct one", "General Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
         private void bEnchant_Click(object sender, EventArgs e)
         {
-
-            changeChange(grade);
+            numTries++;
+            String itemT = RegradeOptions.itemType;
+            String modeT = RegradeOptions.modeType;
+            changeChange(grade,aaversion,modeT);
             Random rnd = new Random();
             int random = rnd.Next(1,100);
             double r_gradeChance = gradeChance * 0.8;
@@ -401,7 +594,6 @@ namespace RegradeProject
             int status = 0;
             int oldGrade = grade;
             //Debug.WriteLine(r_gradeChance);
-            String itemT = RegradeOptions.itemType;
             if (itemT != null && (useResp == true || useScroll == true))
             {
                 if (grade >= 0 && grade < 11)
@@ -420,7 +612,9 @@ namespace RegradeProject
                             if (useCharm == true)
                             {
                                 gradeChance = gradeChance * charmChance;
+                                Debug.WriteLine("with charm: " + gradeChance);
                             }
+                            Debug.WriteLine("no charm: " + gradeChance);
                             //calculation of success
                             if (random >= 0 && random <= gradeChance - r_gradeChance_n)
                             {
@@ -463,7 +657,10 @@ namespace RegradeProject
                             if (useCharm == true)
                             {
                                 gradeChance = gradeChance * charmChance;
+                                Debug.WriteLine("with charm: " + gradeChance);
                             }
+                            Debug.WriteLine("no charm: " + gradeChance);
+                            //calculation of success
                             if (random >= 0 && random <= gradeChance)
                             {
                                 oldGrade = grade - 1;
@@ -506,8 +703,9 @@ namespace RegradeProject
                     encForm.Show();
                     useScroll = false;
                     useResp = false;
+                    useCharm = false;
                 } else {
-                    MessageBox.Show("You can't go above mythic ... yet","Enchant Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("You can't go above Eternal ... yet","Enchant Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             } else {
                 MessageBox.Show("You must first select a weapon from the 'Options' -> 'Regrade Options' and a scroll from the images","Enchant Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -516,6 +714,7 @@ namespace RegradeProject
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
+            lbTriesnum.Text = Convert.ToString(numTries);
             String itemT = RegradeOptions.itemType;
             if (itemT == "1H Weapon")
             {
@@ -572,6 +771,10 @@ namespace RegradeProject
 
         private void MainForm_MouseClick(object sender, MouseEventArgs e)
         {
+            if (aaversion == 0)
+            {
+                MessageBox.Show("You need to select a version first. Options -> Version", "Waring", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             double WScroll = RegradeOptions.weaponS;
             double Charm = RegradeOptions.yellowC;
             cost = WScroll + Charm;
@@ -613,6 +816,7 @@ namespace RegradeProject
 
         private void bClear_Click(object sender, EventArgs e)
         {
+            numTries = 0;
             grade = 2;
             pbScroll.Image = null;
             useScroll = false;
@@ -630,6 +834,44 @@ namespace RegradeProject
             {
                 useHack = true;
             }
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginForm logForm = new LoginForm();
+            logForm.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            aaversion = 1;
+            if (aaversion == 1)
+            {
+                toolStripMenuItem2.Checked = true;
+                toolStripMenuItem3.Checked = false;
+            }
+            else if (aaversion == 2)
+            {
+                toolStripMenuItem2.Checked = false;
+                toolStripMenuItem3.Checked = true;
+            }
+            lbAAversion.Text = "3.0";
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            aaversion = 2;
+            if (aaversion == 1)
+            {
+                toolStripMenuItem2.Checked = true;
+                toolStripMenuItem3.Checked = false;
+            }
+            else if (aaversion == 2)
+            {
+                toolStripMenuItem2.Checked = false;
+                toolStripMenuItem3.Checked = true;
+            }
+            lbAAversion.Text = "3.5";
         }
     }
 }

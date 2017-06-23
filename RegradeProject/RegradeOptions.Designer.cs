@@ -60,6 +60,8 @@
             this.tbGCPrice = new System.Windows.Forms.TextBox();
             this.tbWCPrice = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.cbMode = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bSave
@@ -94,17 +96,7 @@
             "1H Weapon",
             "2H Weapon",
             "Bow",
-            "Shield",
-            "Head",
-            "Chest",
-            "Waist",
-            "Wrist",
-            "Hands",
-            "Legs",
-            "Feet",
-            "Ear",
-            "Neck",
-            "Finger"});
+            "Shield"});
             this.cbItemtype.Location = new System.Drawing.Point(101, 9);
             this.cbItemtype.Name = "cbItemtype";
             this.cbItemtype.Size = new System.Drawing.Size(121, 21);
@@ -390,12 +382,36 @@
             this.label16.TabIndex = 58;
             this.label16.Text = "White Charm:";
             // 
+            // cbMode
+            // 
+            this.cbMode.FormattingEnabled = true;
+            this.cbMode.Items.AddRange(new object[] {
+            "Easy",
+            "Normal",
+            "Hard"});
+            this.cbMode.Location = new System.Drawing.Point(323, 8);
+            this.cbMode.Name = "cbMode";
+            this.cbMode.Size = new System.Drawing.Size(121, 21);
+            this.cbMode.TabIndex = 60;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(264, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 20);
+            this.label17.TabIndex = 59;
+            this.label17.Text = "Mode:";
+            // 
             // RegradeOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(562, 297);
+            this.Controls.Add(this.cbMode);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.tbWCPrice);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tbSRCPrice);
@@ -470,5 +486,7 @@
         public System.Windows.Forms.ComboBox cbItemtype;
         private System.Windows.Forms.TextBox tbWCPrice;
         private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.ComboBox cbMode;
+        private System.Windows.Forms.Label label17;
     }
 }
