@@ -3,8 +3,8 @@ Regrade program as the title says in future you will be able to caclualte also t
 The project is totally unprofessional and it's only for learning.
 
 #Developers
-Leonidas
-Nick
+- Leonidas
+- Nick
 
 ## Installation
 - UnZip the rar at Desktop in a folder
