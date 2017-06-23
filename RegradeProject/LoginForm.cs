@@ -24,7 +24,7 @@ namespace RegradeProject
             string myConnection = "datasource=192.168.1.1;port=3306;username=root;password=blaze23104289`;database=programn";
             MySqlConnection myConn = new MySqlConnection(myConnection);
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM accounts WHERE username= " + tbUsername.Text + "AND password=" + tbPassword.Text + ";");
+            MySqlCommand command = new MySqlCommand("SELECT * FROM account WHERE username= " + tbUsername.Text + "AND password=" + tbPassword.Text + ";");
 
             MySqlDataReader myReader;
             myConn.Open();

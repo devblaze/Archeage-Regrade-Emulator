@@ -35,7 +35,6 @@
             this.regradeOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.useHackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbItemtype = new System.Windows.Forms.PictureBox();
             this.pbScroll = new System.Windows.Forms.PictureBox();
             this.pbCharm = new System.Windows.Forms.PictureBox();
@@ -68,14 +67,6 @@
             this.pbDegradeArrow = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbTries = new System.Windows.Forms.Label();
-            this.lbTriesnum = new System.Windows.Forms.Label();
-            this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbAAversion = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbPerchance = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbItemtype)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbScroll)).BeginInit();
@@ -109,8 +100,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.optionsToolStripMenuItem,
-            this.loginToolStripMenuItem});
+            this.optionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(509, 24);
@@ -126,7 +116,6 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.versionToolStripMenuItem,
             this.regradeOptionsToolStripMenuItem,
             this.toolStripSeparator1,
             this.useHackToolStripMenuItem});
@@ -152,14 +141,6 @@
             this.useHackToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.useHackToolStripMenuItem.Text = "Turn on/off Hack";
             this.useHackToolStripMenuItem.Click += new System.EventHandler(this.useHackToolStripMenuItem_Click);
-            // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Enabled = false;
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.loginToolStripMenuItem.Text = "Login";
-            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // pbItemtype
             // 
@@ -516,103 +497,12 @@
             this.label5.Size = new System.Drawing.Size(0, 22);
             this.label5.TabIndex = 34;
             // 
-            // lbTries
-            // 
-            this.lbTries.AutoSize = true;
-            this.lbTries.BackColor = System.Drawing.Color.Transparent;
-            this.lbTries.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTries.Location = new System.Drawing.Point(361, 45);
-            this.lbTries.Name = "lbTries";
-            this.lbTries.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbTries.Size = new System.Drawing.Size(55, 22);
-            this.lbTries.TabIndex = 35;
-            this.lbTries.Text = "Tries:";
-            this.lbTries.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lbTriesnum
-            // 
-            this.lbTriesnum.AutoSize = true;
-            this.lbTriesnum.BackColor = System.Drawing.Color.Transparent;
-            this.lbTriesnum.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTriesnum.Location = new System.Drawing.Point(415, 45);
-            this.lbTriesnum.Name = "lbTriesnum";
-            this.lbTriesnum.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbTriesnum.Size = new System.Drawing.Size(21, 22);
-            this.lbTriesnum.TabIndex = 36;
-            this.lbTriesnum.Text = "0";
-            this.lbTriesnum.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // versionToolStripMenuItem
-            // 
-            this.versionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.versionToolStripMenuItem.Text = "Version";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem2.Text = "3.0";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem3.Text = "3.5";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
-            // lbAAversion
-            // 
-            this.lbAAversion.AutoSize = true;
-            this.lbAAversion.BackColor = System.Drawing.Color.Transparent;
-            this.lbAAversion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAAversion.Location = new System.Drawing.Point(172, 45);
-            this.lbAAversion.Name = "lbAAversion";
-            this.lbAAversion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbAAversion.Size = new System.Drawing.Size(0, 22);
-            this.lbAAversion.TabIndex = 38;
-            this.lbAAversion.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 45);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(149, 22);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Archeage Version";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lbPerchance
-            // 
-            this.lbPerchance.AutoSize = true;
-            this.lbPerchance.BackColor = System.Drawing.Color.Transparent;
-            this.lbPerchance.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPerchance.Location = new System.Drawing.Point(95, 463);
-            this.lbPerchance.Name = "lbPerchance";
-            this.lbPerchance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbPerchance.Size = new System.Drawing.Size(0, 22);
-            this.lbPerchance.TabIndex = 39;
-            this.lbPerchance.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(509, 672);
-            this.Controls.Add(this.lbPerchance);
-            this.Controls.Add(this.lbAAversion);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lbTriesnum);
-            this.Controls.Add(this.lbTries);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbDegradeArrow);
@@ -727,15 +617,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem useHackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
-        private System.Windows.Forms.Label lbTries;
-        private System.Windows.Forms.Label lbTriesnum;
-        private System.Windows.Forms.ToolStripMenuItem versionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.Label lbAAversion;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lbPerchance;
     }
 }
 
