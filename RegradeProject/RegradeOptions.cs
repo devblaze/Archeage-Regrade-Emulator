@@ -14,6 +14,7 @@ namespace RegradeProject
     public partial class RegradeOptions : Form
     {
         public static String itemType;
+        public static String modeType;
         public static double weaponS;
         public static double armorS;
         public static double accessoryS;
@@ -37,6 +38,7 @@ namespace RegradeProject
         {
             weaponS = Convert.ToDouble(tbWSPrice.Text);
             itemType = cbItemtype.GetItemText(this.cbItemtype.SelectedItem);
+            modeType = cbMode.GetItemText(this.cbMode.SelectedItem);
             //itemType = cbItemtype.SelectedText.ToString();
             Debug.WriteLine(itemType);
             Debug.WriteLine(weaponS);
