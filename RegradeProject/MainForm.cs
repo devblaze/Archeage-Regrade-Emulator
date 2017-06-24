@@ -79,8 +79,7 @@ namespace RegradeProject
                 useResp = false;
                 useScroll = true;
             }
-            changeChange(grade, aaversion,RegradeOptions.modeType);
-            Debug.WriteLine("Scroll:" + gradeChance);
+            changeChance(grade, aaversion,RegradeOptions.modeType);
             updateChance();
 
         }
@@ -117,7 +116,7 @@ namespace RegradeProject
                     useScroll = false;
                 }
                 
-                changeChange(grade, aaversion, RegradeOptions.modeType);
+                changeChance(grade, aaversion, RegradeOptions.modeType);
                 Debug.WriteLine("Scroll:"+gradeChance);
                 updateChance();
             }
@@ -299,7 +298,6 @@ namespace RegradeProject
                 pbCharm.Image = Properties.Resources.charm_green;
                 charmChance = 1.75;
                 updateChance();
-                Debug.WriteLine("egw:" + gradeChance);
             }
         }
 
@@ -311,7 +309,6 @@ namespace RegradeProject
                 pbCharm.Image = Properties.Resources.charm_blue;
                 charmChance = 1.75;
                 updateChance();
-                Debug.WriteLine("egw:" + gradeChance);
             }
         }
 
@@ -323,7 +320,6 @@ namespace RegradeProject
                 pbCharm.Image = Properties.Resources.charm_yellow;
                 charmChance = 1.5;
                 updateChance();
-                Debug.WriteLine("egw:" + gradeChance);
             }
         }
 
@@ -333,7 +329,6 @@ namespace RegradeProject
             pbCharm.Image = Properties.Resources.charm_s_yellow;
             charmChance = 1.5;
             updateChance();
-            Debug.WriteLine("egw:" + gradeChance);
         }
 
         private void pbRed_Click(object sender, EventArgs e)
@@ -344,7 +339,6 @@ namespace RegradeProject
                 pbCharm.Image = Properties.Resources.charm_red;
                 charmChance = 2;
                 updateChance();
-                Debug.WriteLine("egw:" + gradeChance);
             }
         }
 
@@ -354,7 +348,6 @@ namespace RegradeProject
             pbCharm.Image = Properties.Resources.charm_s_red;
             charmChance = 2;
             updateChance();
-            Debug.WriteLine("egw:" + gradeChance);
         }
 
         private void pbWhite_Click(object sender, EventArgs e)
@@ -365,23 +358,27 @@ namespace RegradeProject
                 pbCharm.Image = Properties.Resources.charm_silver_white;
                 charmChance = 2.5;
                 updateChance();
-                Debug.WriteLine("egw:"+ gradeChance);
             }
         }
 
         void updateChance()
         {
-            
-            Debug.WriteLine(useCharm);
-            Debug.WriteLine(gradeChance);
             double tmp;
             if (useCharm == true)
             {
                 tmp = gradeChance * charmChance;
+                if (tmp > 100)
+                {
+                    MessageBox.Show("Something is not right with the percentage. Please report it to the Developers. dev.blaze@gmail.com", "Logic Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
                 tmp = gradeChance;
+                if (tmp > 100)
+                {
+                    MessageBox.Show("Something is not right with the percentage. Please report it to the Developers. dev.blaze@gmail.com", "Logic Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             if (grade != 12)
             {
@@ -389,7 +386,7 @@ namespace RegradeProject
             }         
         }
 
-        void changeChange(int gra,int aaver,String mode)
+        void changeChance(int gra,int aaver,String mode)
         {
             if (aaversion == 1)
             {
@@ -497,7 +494,7 @@ namespace RegradeProject
                             break;
                         case 12:
                             //Eternal
-                            lbPerchance.Text = "WIN";
+                            lbPerchance.Text = "0%";
                             break;
                     }
                 }
@@ -551,7 +548,7 @@ namespace RegradeProject
                             break;
                         case 12:
                             //Eternal
-                            lbPerchance.Text = "WIN";
+                            lbPerchance.Text = "0%";
                             break;
                     }
                 }
@@ -605,9 +602,8 @@ namespace RegradeProject
                             break;
                         case 12:
                             //Eternal
-                            lbPerchance.Text = "WIN";
+                            lbPerchance.Text = "0%";
                             break;
-
                     }
                 }
                 else
@@ -621,14 +617,11 @@ namespace RegradeProject
         {
             numTries++;
             String itemT = RegradeOptions.itemType;
-            modeT = RegradeOptions.modeType;
-            changeChange(grade,aaversion,modeT);
             Random rnd = new Random();
             int random = rnd.Next(1,100);
             double r_gradeChance = gradeChance * 0.8;
             double r_gradeChance_n = gradeChance * 0.2;
             double f_d_chance = (gradeChance - 100) * 0.5;
-            //double d_chance = gradeChance - 100;
             int status = 0;
             int oldGrade = grade;
             //Debug.WriteLine(r_gradeChance);
