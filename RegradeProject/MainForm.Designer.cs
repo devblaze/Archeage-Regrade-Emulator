@@ -32,6 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.regradeOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.useHackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,19 +66,17 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbSuccessArrow = new System.Windows.Forms.PictureBox();
             this.pbDestArrow = new System.Windows.Forms.PictureBox();
             this.pbDegradeArrow = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbTries = new System.Windows.Forms.Label();
             this.lbTriesnum = new System.Windows.Forms.Label();
-            this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.lbAAversion = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbPerchance = new System.Windows.Forms.Label();
+            this.lbMFails = new System.Windows.Forms.Label();
+            this.lbFails = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbItemtype)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbScroll)).BeginInit();
@@ -100,7 +101,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSuccessArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDestArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDegradeArrow)).BeginInit();
             this.SuspendLayout();
@@ -133,6 +133,29 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // versionToolStripMenuItem
+            // 
+            this.versionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.versionToolStripMenuItem.Text = "Version";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(89, 22);
+            this.toolStripMenuItem2.Text = "3.0";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(89, 22);
+            this.toolStripMenuItem3.Text = "3.5";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // regradeOptionsToolStripMenuItem
             // 
@@ -468,16 +491,6 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Total Cost:";
             // 
-            // pbSuccessArrow
-            // 
-            this.pbSuccessArrow.BackColor = System.Drawing.Color.Transparent;
-            this.pbSuccessArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbSuccessArrow.Location = new System.Drawing.Point(51, 425);
-            this.pbSuccessArrow.Name = "pbSuccessArrow";
-            this.pbSuccessArrow.Size = new System.Drawing.Size(100, 35);
-            this.pbSuccessArrow.TabIndex = 29;
-            this.pbSuccessArrow.TabStop = false;
-            // 
             // pbDestArrow
             // 
             this.pbDestArrow.BackColor = System.Drawing.Color.Transparent;
@@ -521,12 +534,12 @@
             this.lbTries.AutoSize = true;
             this.lbTries.BackColor = System.Drawing.Color.Transparent;
             this.lbTries.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTries.Location = new System.Drawing.Point(361, 45);
+            this.lbTries.Location = new System.Drawing.Point(306, 45);
             this.lbTries.Name = "lbTries";
             this.lbTries.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbTries.Size = new System.Drawing.Size(55, 22);
+            this.lbTries.Size = new System.Drawing.Size(103, 66);
             this.lbTries.TabIndex = 35;
-            this.lbTries.Text = "Tries:";
+            this.lbTries.Text = "Tries:\r\nFails:\r\nMajor Fails:";
             this.lbTries.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lbTriesnum
@@ -541,29 +554,6 @@
             this.lbTriesnum.TabIndex = 36;
             this.lbTriesnum.Text = "0";
             this.lbTriesnum.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // versionToolStripMenuItem
-            // 
-            this.versionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.versionToolStripMenuItem.Text = "Version";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem2.Text = "3.0";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem3.Text = "3.5";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // lbAAversion
             // 
@@ -595,12 +585,39 @@
             this.lbPerchance.AutoSize = true;
             this.lbPerchance.BackColor = System.Drawing.Color.Transparent;
             this.lbPerchance.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPerchance.Location = new System.Drawing.Point(95, 463);
+            this.lbPerchance.Location = new System.Drawing.Point(81, 438);
             this.lbPerchance.Name = "lbPerchance";
             this.lbPerchance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbPerchance.Size = new System.Drawing.Size(0, 22);
+            this.lbPerchance.Size = new System.Drawing.Size(38, 22);
             this.lbPerchance.TabIndex = 39;
+            this.lbPerchance.Text = "0%";
             this.lbPerchance.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lbMFails
+            // 
+            this.lbMFails.AutoSize = true;
+            this.lbMFails.BackColor = System.Drawing.Color.Transparent;
+            this.lbMFails.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMFails.Location = new System.Drawing.Point(415, 89);
+            this.lbMFails.Name = "lbMFails";
+            this.lbMFails.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbMFails.Size = new System.Drawing.Size(21, 22);
+            this.lbMFails.TabIndex = 40;
+            this.lbMFails.Text = "0";
+            this.lbMFails.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lbFails
+            // 
+            this.lbFails.AutoSize = true;
+            this.lbFails.BackColor = System.Drawing.Color.Transparent;
+            this.lbFails.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFails.Location = new System.Drawing.Point(414, 67);
+            this.lbFails.Name = "lbFails";
+            this.lbFails.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbFails.Size = new System.Drawing.Size(21, 22);
+            this.lbFails.TabIndex = 41;
+            this.lbFails.Text = "0";
+            this.lbFails.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // MainForm
             // 
@@ -608,6 +625,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(509, 672);
+            this.Controls.Add(this.lbFails);
+            this.Controls.Add(this.lbMFails);
             this.Controls.Add(this.lbPerchance);
             this.Controls.Add(this.lbAAversion);
             this.Controls.Add(this.label6);
@@ -617,7 +636,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pbDegradeArrow);
             this.Controls.Add(this.pbDestArrow);
-            this.Controls.Add(this.pbSuccessArrow);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox6);
@@ -679,7 +697,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSuccessArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDestArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDegradeArrow)).EndInit();
             this.ResumeLayout(false);
@@ -720,7 +737,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pbSuccessArrow;
         private System.Windows.Forms.PictureBox pbDestArrow;
         private System.Windows.Forms.PictureBox pbDegradeArrow;
         private System.Windows.Forms.Label label4;
@@ -736,6 +752,8 @@
         private System.Windows.Forms.Label lbAAversion;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbPerchance;
+        private System.Windows.Forms.Label lbMFails;
+        private System.Windows.Forms.Label lbFails;
     }
 }
 

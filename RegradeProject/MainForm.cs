@@ -23,6 +23,8 @@ namespace RegradeProject
         double gradeChance = 40;
         bool useHack = false;
         int numTries = 0;
+        int numFails = 0;
+        int numMFails = 0;
         int aaversion = 0;
         String modeT;
 
@@ -646,31 +648,41 @@ namespace RegradeProject
                                 Debug.WriteLine("with charm: " + gradeChance);
                             }
                             Debug.WriteLine("no charm: " + gradeChance);
-                            //calculation of success
+                            //calculation
                             if (random >= 0 && random <= gradeChance - r_gradeChance_n)
                             {
+                                //success
                                 oldGrade = grade - 1;
                                 grade += 1;
                                 status = 1;
                             }
                             else if (random > gradeChance - r_gradeChance_n && random <= gradeChance)
                             {
+                                //major_success
                                 oldGrade = grade - 2;
                                 grade += 2;
                                 status = 2;
                             }
                             else if ((random > gradeChance && random > gradeChance + f_d_chance) && grade == 7)
                             {
+                                //failure (celestial)
                                 oldGrade = grade + 2;
                                 grade -= 3;
                                 status = 0;
+                                numFails++;
                             }
                             else if (random > gradeChance && grade > 7)
                             {
+                                //major_failure
                                 grade = 2;
                                 status = 3;
                                 pbItemtype.Image = null;
                                 itemT = null;
+                                numMFails++;
+                            }
+                            else
+                            {
+                                numFails++;
                             }
                         }
                         pbGrade.Image = Image.FromFile("images/grade" + grade + ".png");
@@ -694,22 +706,31 @@ namespace RegradeProject
                             //calculation of success
                             if (random >= 0 && random <= gradeChance)
                             {
+                                //success
                                 oldGrade = grade - 1;
                                 grade += 1;
                                 status = 1;
                             }
                             else if ((random > gradeChance && random > gradeChance + f_d_chance) && grade == 7)
                             {
+                                //failure (celestial)
                                 oldGrade = grade + 3;
                                 grade -= 3;
                                 status = 0;
+                                numFails++;
                             }
                             else if (random > gradeChance && grade > 7)
                             {
+                                //major_failure
                                 grade = 2;
                                 status = 3;
                                 pbItemtype.Image = null;
                                 itemT = null;
+                                numMFails++;
+                            }
+                            else
+                            {
+                                numFails++;
                             }
                         }
                         Debug.WriteLine("oldgrade: " + oldGrade);
@@ -735,6 +756,10 @@ namespace RegradeProject
                     useScroll = false;
                     useResp = false;
                     useCharm = false;
+                    lbTriesnum.Text = Convert.ToString(numTries);
+                    lbMFails.Text = Convert.ToString(numMFails);
+                    lbFails.Text = Convert.ToString(numFails);
+                    Debug.WriteLine(numFails);
                 } else {
                     MessageBox.Show("You can't go above Eternal ... yet","Enchant Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
@@ -745,7 +770,6 @@ namespace RegradeProject
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            lbTriesnum.Text = Convert.ToString(numTries);
             String itemT = RegradeOptions.itemType;
             if (itemT == "1H Weapon")
             {
@@ -848,21 +872,26 @@ namespace RegradeProject
         private void bClear_Click(object sender, EventArgs e)
         {
             numTries = 0;
+            numFails = 0;
+            numMFails = 0;
             grade = 2;
             pbScroll.Image = null;
             useScroll = false;
             pbCharm.Image = null;
             useCharm = false;
             pbGrade.Image = Image.FromFile("images/grade" + grade + ".png");
+            lbTriesnum.Text = Convert.ToString(numTries);
         }
 
         private void useHackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (useHack == true)
             {
+                useHackToolStripMenuItem.Checked = false;
                 useHack = false;
             }else
             {
+                useHackToolStripMenuItem.Checked = true;
                 useHack = true;
             }
         }
