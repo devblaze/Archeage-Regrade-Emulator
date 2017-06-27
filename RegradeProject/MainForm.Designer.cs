@@ -315,8 +315,8 @@
             // pbGreen
             // 
             this.pbGreen.BackColor = System.Drawing.Color.Transparent;
-            this.pbGreen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbGreen.BackgroundImage")));
-            this.pbGreen.Location = new System.Drawing.Point(113, 534);
+            this.pbGreen.BackgroundImage = global::RegradeProject.Properties.Resources.charm_green;
+            this.pbGreen.Location = new System.Drawing.Point(111, 534);
             this.pbGreen.Name = "pbGreen";
             this.pbGreen.Size = new System.Drawing.Size(50, 50);
             this.pbGreen.TabIndex = 14;
@@ -326,7 +326,8 @@
             // pbBlue
             // 
             this.pbBlue.BackColor = System.Drawing.Color.Transparent;
-            this.pbBlue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbBlue.BackgroundImage")));
+            this.pbBlue.BackgroundImage = global::RegradeProject.Properties.Resources.charm_blue;
+            this.pbBlue.ErrorImage = global::RegradeProject.Properties.Resources.charm_blue;
             this.pbBlue.Location = new System.Drawing.Point(167, 534);
             this.pbBlue.Name = "pbBlue";
             this.pbBlue.Size = new System.Drawing.Size(50, 50);
@@ -337,7 +338,8 @@
             // pbYellow
             // 
             this.pbYellow.BackColor = System.Drawing.Color.Transparent;
-            this.pbYellow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbYellow.BackgroundImage")));
+            this.pbYellow.BackgroundImage = global::RegradeProject.Properties.Resources.charm_yellow;
+            this.pbYellow.ErrorImage = global::RegradeProject.Properties.Resources.charm_yellow;
             this.pbYellow.Location = new System.Drawing.Point(221, 534);
             this.pbYellow.Name = "pbYellow";
             this.pbYellow.Size = new System.Drawing.Size(50, 50);
@@ -348,7 +350,8 @@
             // pbSYellow
             // 
             this.pbSYellow.BackColor = System.Drawing.Color.Transparent;
-            this.pbSYellow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbSYellow.BackgroundImage")));
+            this.pbSYellow.BackgroundImage = global::RegradeProject.Properties.Resources.charm_s_yellow;
+            this.pbSYellow.ErrorImage = global::RegradeProject.Properties.Resources.charm_s_yellow;
             this.pbSYellow.Location = new System.Drawing.Point(275, 534);
             this.pbSYellow.Name = "pbSYellow";
             this.pbSYellow.Size = new System.Drawing.Size(50, 50);
@@ -359,7 +362,7 @@
             // pbRed
             // 
             this.pbRed.BackColor = System.Drawing.Color.Transparent;
-            this.pbRed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbRed.BackgroundImage")));
+            this.pbRed.BackgroundImage = global::RegradeProject.Properties.Resources.charm_red;
             this.pbRed.Location = new System.Drawing.Point(329, 534);
             this.pbRed.Name = "pbRed";
             this.pbRed.Size = new System.Drawing.Size(50, 50);
@@ -370,7 +373,7 @@
             // pbSRed
             // 
             this.pbSRed.BackColor = System.Drawing.Color.Transparent;
-            this.pbSRed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbSRed.BackgroundImage")));
+            this.pbSRed.BackgroundImage = global::RegradeProject.Properties.Resources.charm_s_red;
             this.pbSRed.Location = new System.Drawing.Point(383, 534);
             this.pbSRed.Name = "pbSRed";
             this.pbSRed.Size = new System.Drawing.Size(50, 50);
@@ -381,7 +384,8 @@
             // pbWhite
             // 
             this.pbWhite.BackColor = System.Drawing.Color.Transparent;
-            this.pbWhite.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbWhite.BackgroundImage")));
+            this.pbWhite.BackgroundImage = global::RegradeProject.Properties.Resources.charm_silver_white;
+            this.pbWhite.ErrorImage = global::RegradeProject.Properties.Resources.charm_silver_white;
             this.pbWhite.Location = new System.Drawing.Point(437, 534);
             this.pbWhite.Name = "pbWhite";
             this.pbWhite.Size = new System.Drawing.Size(50, 50);
